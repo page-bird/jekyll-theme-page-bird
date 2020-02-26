@@ -1,0 +1,9 @@
+---
+name: Page Bird Tests
+url: https://www.page-bird.com
+code_snippet: <script> alert("hi"); </script>
+sticky_bar:
+  background_color: ''
+  color: ''
+  content: Hello Maria
+  link: https://www.maria.com
