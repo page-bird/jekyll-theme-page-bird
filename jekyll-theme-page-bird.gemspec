@@ -4,10 +4,10 @@ Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-page-bird"
   spec.version       = "0.1.0"
   spec.authors       = ["Alejo Rivera"]
-  spec.email         = ["alejo@juntostudio.com"]
+  spec.email         = ["alejo@page-bird.com"]
 
-  spec.summary       = "TODO: Write a short summary, because Rubygems requires one."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Hello"
+  spec.homepage      = "https://www.page-bird.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
@@ -16,4 +16,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "pry"
 end
