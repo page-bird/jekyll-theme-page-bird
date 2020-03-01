@@ -1,9 +1,25 @@
 ---
-name: Page Bird Tests
+name: APIs by Alejo
 url: https://www.page-bird.com
 code_snippet: <script> alert("hi"); </script>
 sticky_bar:
   background_color: ''
   color: ''
-  content: Hello Maria
-  link: https://www.maria.com
+  content: Falafele
+  link: http://falafel.com
+blog:
+  active: false
+  published_posts:
+  - title: Rabbit
+    published?: true
+    content_as_html: |
+      <div class="trix-content">
+        <div>Ribbit, Ribbit.<br><br>
+      </div>
+      </div>
+  - title: asdf
+    published?: true
+    content_as_html: |
+      <div class="trix-content">
+        <div>asdf<br>asdfasd<br>fa<br>sdfa<br>sdfa<br>sdf<br>as<br>dfa<br>sdf<br>asd<br>fa<br>sdf<br>asd<br>f<br>asdf<br>asdf<br>asdf<br>asdf<br>asd<br>fasdf<br>a</div>
+      </div>

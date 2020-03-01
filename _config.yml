@@ -1,2 +1,3 @@
 page_bird_data_fetch:
+  api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
   website: "42321225"
