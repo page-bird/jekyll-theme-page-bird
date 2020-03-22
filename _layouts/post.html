@@ -2,8 +2,5 @@
 layout: default
 ---
 
-<h2>
-  {{ page.resource.title }}
-</h2>
-
-{{ page.resource.content_as_html }}
+{% assign blog_post = page.resource %}
+{% include pb_blog_post.html %}

@@ -1,1 +1,10 @@
-Yo
+---
+layout: default
+page_name: home
+---
+
+{% if site.data.bird.blog.published_posts.size > 0 %}
+  {% for blog_post in site.data.bird.blog.published_posts %}
+    {% include pb_blog_post_card.html %}
+  {% endfor%}
+{% endif %}

@@ -1,9 +1,9 @@
 page_bird_data_fetch:
-  # api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
+  api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
   website: "42321225"
 
 page_gen:
   - data: 'bird.blog.published_posts'
     template: 'post'
-    name: 'title'
+    name: 'slug'
     dir: 'blog'

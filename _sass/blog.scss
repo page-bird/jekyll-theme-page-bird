@@ -1,0 +1,46 @@
+.pb-blog-post-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 1.5rem;
+    animation: linear 1s placeHolderShimmer infinite;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 350% 100%;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .content {
+    margin-top: 4px;
+  }
+
+  .meta {
+    margin-top: 8px;
+    font-size: 80%;
+    color: rgba(black, 0.6);
+  }
+
+  &:first-child {
+    border-top: 2px solid #ecedf2;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -300px 0;
+  }
+  100% {
+    background-position: 300px 0;
+  }
+}

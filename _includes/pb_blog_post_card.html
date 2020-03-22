@@ -1,0 +1,19 @@
+<div class="pb-blog-post-card">
+  <a href="/blog/{{ blog_post.slug }}" class="absolute-link"></a>
+
+  {% if blog_post.preview_img_url %}
+    <img src="{{ blog_post.preview_img_url }}">
+  {% endif %}
+
+  <div>
+    <h3> {{ blog_post.title }} </h3>
+
+    <div class="content">
+      {{ blog_post.preview_content }}
+    </div>
+
+    <div class="meta">
+      Published on...
+    </div>
+  </div>
+</div>

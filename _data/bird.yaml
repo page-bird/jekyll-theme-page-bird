@@ -10,15 +10,37 @@ sticky_bar:
 blog:
   active: false
   published_posts:
-  - title: Rabbit
+  - published_at: '2020-03-09T22:54:09.184Z'
+    title: Hello World
     published?: true
-    content_as_html: |
-      <div class="trix-content">
-        <div>Ribbit, Ribbit.<br><br>
-      </div>
-      </div>
-  - title: asdf
+    slug: hello-world
+    preview_img_url: http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69a677dae14587905a8f59652c768b811ba8334a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQWNocEFjZz0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--03eaafac36a93308272ca6249beaa49e88d68a38/nasa-Q1p7bh3SHj8-unsplash.jpg
+    preview_content: "\n  There is a world out there folks \U0001F30F\n  \n    \n\n..."
+    content_as_html: "<div class=\"trix-content\">\n  <div>There is a world out there
+      folks \U0001F30F</div><div class=\"attachment-gallery attachment-gallery--2\">\n
+      \ <action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI2Z2lkOi8vcGFnZS1iaXJkL0FjdGl2ZVN0b3JhZ2U6OkJsb2IvMTQ_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--cd86e55ef56f52cb2e889d30bc48a6701aa0c7f1\"
+      content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69a677dae14587905a8f59652c768b811ba8334a/nasa-Q1p7bh3SHj8-unsplash.jpg\"
+      filename=\"nasa-Q1p7bh3SHj8-unsplash.jpg\" filesize=\"902115\" width=\"4256\"
+      height=\"2832\" previewable=\"true\" presentation=\"gallery\"><figure class=\"attachment
+      attachment--preview attachment--jpg\">\n    <img src=\"http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--69a677dae14587905a8f59652c768b811ba8334a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQWlBRGFRSllBZz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--d021b4d334390ae8132d1d2b062c5e8c69ca7711/nasa-Q1p7bh3SHj8-unsplash.jpg\">\n\n
+      \ <figcaption class=\"attachment__caption\">\n      <span class=\"attachment__name\">nasa-Q1p7bh3SHj8-unsplash.jpg</span>\n
+      \     <span class=\"attachment__size\">881 KB</span>\n  </figcaption>\n</figure></action-text-attachment><action-text-attachment
+      sgid=\"BAh7CEkiCGdpZAY6BkVUSSI2Z2lkOi8vcGFnZS1iaXJkL0FjdGl2ZVN0b3JhZ2U6OkJsb2IvMTc_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--747776413fe2bef8adb503a095452d45ed59e79b\"
+      content-type=\"image/jpeg\" url=\"http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--eae4d681c05b12635c1f3ebbaa76d95b1e880d11/e71b1d9e2a0d49b09080e0cb0ecd2b72_30_960.jpg\"
+      filename=\"e71b1d9e2a0d49b09080e0cb0ecd2b72_30_960.jpg\" filesize=\"303051\"
+      width=\"960\" height=\"708\" previewable=\"true\" presentation=\"gallery\"><figure
+      class=\"attachment attachment--preview attachment--jpg\">\n    <img src=\"http://localhost:3000/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--eae4d681c05b12635c1f3ebbaa76d95b1e880d11/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9VY21WemFYcGxYM1J2WDJ4cGJXbDBXd2RwQWlBRGFRSllBZz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--d021b4d334390ae8132d1d2b062c5e8c69ca7711/e71b1d9e2a0d49b09080e0cb0ecd2b72_30_960.jpg\">\n\n
+      \ <figcaption class=\"attachment__caption\">\n      <span class=\"attachment__name\">e71b1d9e2a0d49b09080e0cb0ecd2b72_30_960.jpg</span>\n
+      \     <span class=\"attachment__size\">296 KB</span>\n  </figcaption>\n</figure></action-text-attachment>\n</div><div>The
+      end.</div>\n</div>\n"
+  - published_at: '2020-03-09T22:53:31.573Z'
+    title: asdf
     published?: true
+    slug: asdf
+    preview_img_url: 
+    preview_content: |2-
+
+        asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf...
     content_as_html: |
       <div class="trix-content">
         <div>asdf<br>asdfasd<br>fa<br>sdfa<br>sdfa<br>sdf<br>as<br>dfa<br>sdf<br>asd<br>fa<br>sdf<br>asd<br>f<br>asdf<br>asdf<br>asdf<br>asdf<br>asd<br>fasdf<br>a</div>
