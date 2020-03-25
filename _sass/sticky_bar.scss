@@ -5,13 +5,16 @@
   align-items: center;
   text-align: center;
   padding: 0.25rem 1rem;
-  background-color: green;
+  background: linear-gradient(135deg,rgb(35, 146, 236),rgb(13, 92, 156));
+  background-size: 200%;
+  background-position: 0% 0;
   color: white;
   text-decoration: none;
   transition: 200ms all ease-in;
 
   &:hover, &:focus, &:active {
-    background-color: darken(green, 5%);
+    color: white;
     text-decoration: none;
+    background-position: 100% 0;
   }
 }
