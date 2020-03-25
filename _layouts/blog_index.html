@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% include navbar.html %}
+
 {% if site.data.bird.blog.published_posts.size > 0 %}
   {% assign blog_post = site.data.bird.blog.published_posts | first %}
   {% include pb_blog_post_card.html featured="true" %}
