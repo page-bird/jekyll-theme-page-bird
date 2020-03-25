@@ -17,6 +17,8 @@
   }
 
   img {
+    min-width: 128px;
+    min-height: 128px;
     width: 128px;
     height: 128px;
     object-fit: cover;
@@ -122,5 +124,39 @@
   }
   100% {
     background-position: 300px 0;
+  }
+}
+
+.pb-blog-post {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1.title {
+    margin: 0 0 2rem;
+    font-size: 3.125rem;
+  }
+
+  .trix-content {
+    font-size: 1.17rem;
+    line-height: 1.9;
+
+    h1 {
+      font-size: 1.67rem;
+    }
+
+    ul, ol {
+      li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    color: rgba(0, 0, 0, 0.843137);
+
+    h1.title {
+      font-size: 2rem;
+    }
   }
 }
