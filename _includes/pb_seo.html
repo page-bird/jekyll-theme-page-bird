@@ -21,9 +21,9 @@
 {% endif %}
 <meta property="og:image" content="{{ image_url }}" />
 
-{% if site.data.bird.url %}
-  <link rel="canonical" href="{{ site.data.bird.url }}{{ page.url }}" />
-  <meta property="og:url" content="{{ site.data.bird.url }}{{ page.url }}" />
+{% if site.url %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 {% endif %}
 
 {% if site.data.bird.name %}
