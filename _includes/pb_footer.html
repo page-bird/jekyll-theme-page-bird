@@ -1,2 +1,5 @@
-{% include page-bird-popup.html %}
+{% if site.page_bird.popup %}
+  {% include pb_popup/pb_popup.html %}
+{% endif %}
+
 {% include custom_footer.html %}
