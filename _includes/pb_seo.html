@@ -1,0 +1,43 @@
+{% if page['title'] %}
+  {% assign title = page['title'] %}
+{% else %}
+  {% assign title = site.page_bird.seo.title %}
+{% endif %}
+<title>{{ title }}</title>
+<meta property="og:title" content="{{ title }}" />
+
+{% if page['description'] %}
+  {% assign description = page['description'] %}
+{% else %}
+  {% assign description = site.page_bird.seo.description %}
+{% endif %}
+<meta name="description" content="{{ description }}" />
+<meta property="og:description" content="{{ description }}" />
+
+{% if page['image_url'] %}
+  {% assign image_url = page['image_url'] %}
+{% else %}
+  {% assign image_url = site.page_bird.seo.image_url %}
+{% endif %}
+<meta property="og:image" content="{{ image_url }}" />
+
+{% if site.data.bird.url %}
+  <link rel="canonical" href="{{ site.data.bird.url }}{{ page.url }}" />
+  <meta property="og:url" content="{{ site.data.bird.url }}{{ page.url }}" />
+{% endif %}
+
+{% if site.data.bird.name %}
+  <meta property="og:site_name" content="{{ site.data.bird.name }}" />
+{% endif %}
+
+{% if page['date'] %}
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="{{ page['date'] | date_to_xmlschema }}" />
+{% endif %}
+
+{% if site.page_bird.seo['locale'] %}
+  {% assign locale = site.page_bird.seo['locale'] %}
+{% else %}
+  {% assign locale = "en_US" %}
+{% endif %}
+<meta property="og:locale" content="{{ locale | replace:'-','_' }}" />
