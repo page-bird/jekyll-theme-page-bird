@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    {% include pb_seo.html %}
+  {% include pb_head.html %}
 
-    <link rel="stylesheet" href="{{ '/css/app.css' | relative_url }}" type="text/css">
-  </head>
-  <body>
-    {{ content }}
+  <body class="{% if site.data.bird.sticky_bar.active %} pb-stick-bar-active {% endif %}">
+    {% include pb_header.html %}
+
+    <div class="page-content">
+      {{ content }}
+    </div>
+
+    {% include pb_footer.html %}
   </body>
 </html>
