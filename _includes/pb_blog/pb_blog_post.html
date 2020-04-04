@@ -1,0 +1,19 @@
+<div class="pb-blog-post">
+  <h1 class="title">
+    {{ blog_post.title }}
+  </h1>
+
+  <div class="pb-blog-post-meta">
+    <div class="pb-blog-post-meta--author-date">
+      <div class="pb-blog-post-meta--author">
+      </div>
+      <div class="pb-blog-post-meta--date">
+        {{ blog_post.published_at | date_to_long_string: "ordinal", "US"  }}
+      </div>
+    </div>
+
+    {% include pb_blog/pb_blog_post_sharing.html %}
+  </div>
+
+  {{ blog_post.content_as_html }}
+</div>

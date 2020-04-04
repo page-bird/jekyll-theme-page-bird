@@ -133,8 +133,9 @@
   padding: 2rem;
 
   h1.title {
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     font-size: 3.125rem;
+    line-height: 1.12;
   }
 
   .trix-content {
@@ -157,6 +158,46 @@
 
     h1.title {
       font-size: 2rem;
+    }
+  }
+}
+
+.pb-blog-post-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  color: rgba(0, 0, 0, 0.541176);
+}
+
+.pb-blog-post-meta--sharing {
+  font-size: 1.25rem;
+  display: flex;
+
+  a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 75%;
+    margin-right: 6px;
+    transition: 200ms all ease-in-out;
+
+    svg {
+      fill: white;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

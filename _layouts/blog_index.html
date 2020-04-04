@@ -6,14 +6,14 @@ layout: default
 
 {% if site.data.bird.blog.published_posts.size > 0 %}
   {% assign blog_post = site.data.bird.blog.published_posts | first %}
-  {% include pb_blog_post_card.html featured="true" %}
+  {% include pb_blog/pb_blog_post_card.html featured="true" %}
 {% endif %}
 
 {% if site.data.bird.blog.published_posts.size > 1 %}
   <div class="pb-blog-index">
     {% for blog_post in site.data.bird.blog.published_posts %}
       {% if forloop.first == false %}
-        {% include pb_blog_post_card.html %}
+        {% include pb_blog/pb_blog_post_card.html %}
       {% endif %}
     {% endfor%}
   </div>
