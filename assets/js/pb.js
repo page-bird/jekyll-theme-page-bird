@@ -57,3 +57,20 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   }
 });
+
+// Blog Post Progress Bar
+
+document.addEventListener('DOMContentLoaded', function() {
+  let pbProgressBar = document.getElementsByClassName("pb-blog-post--progress-bar")[0]
+
+  if (pbProgressBar) {
+    window.onscroll = function() { updateProgressBar(pbProgressBar) };
+  }
+})
+
+function updateProgressBar(bar) {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  bar.style.width = scrolled + "%";
+}
