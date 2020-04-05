@@ -9,13 +9,11 @@
     <div>
       <h3> {{ blog_post.title }} </h3>
 
-      <div class="excerpt">
+      <div class="pb-blog-post--excerpt">
         {{ blog_post.preview_content }}
       </div>
 
-      <div class="meta">
-        {{ blog_post.published_at | date_to_long_string: "ordinal", "US"  }}
-      </div>
+      {% include pb_blog/pb_blog_post_meta.html %}
     </div>
   </div>
 </div>

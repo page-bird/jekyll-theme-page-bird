@@ -7,3 +7,12 @@
   cursor: pointer;
   z-index: 30;
 }
+
+.dot-divider {
+  padding-right: .3em;
+  padding-left: .3em;
+
+  &::after {
+    content: '\00B7';
+  }
+}

@@ -35,11 +35,11 @@
     margin: 0;
   }
 
-  .excerpt {
+  .pb-blog-post--excerpt {
     margin-top: 4px;
   }
 
-  .meta {
+  .pb-blog-post--meta {
     margin-top: 8px;
     font-size: 80%;
     color: rgba(black, 0.6);
@@ -162,7 +162,7 @@
   }
 }
 
-.pb-blog-post-meta {
+.pb-blog-post--header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,7 +170,12 @@
   color: rgba(0, 0, 0, 0.541176);
 }
 
-.pb-blog-post-meta--sharing {
+.pb-blog-post--meta {
+  display: flex;
+  align-items: center;
+}
+
+.pb-blog-post--sharing {
   font-size: 1.25rem;
   display: flex;
 
@@ -210,7 +215,6 @@
   left: 0;
 }
 
-/* The progress bar (scroll indicator) */
 .pb-blog-post--progress-bar {
   height: 6px;
   width: 0%;
