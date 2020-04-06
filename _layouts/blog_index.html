@@ -4,17 +4,18 @@ layout: default
 
 {% include navbar.html %}
 
-{% if site.data.bird.blog.published_posts.size > 0 %}
-  {% assign blog_post = site.data.bird.blog.published_posts | first %}
+{% if paginator.page == 1 and paginator.posts.size > 0 %}
+  {% assign blog_post = paginator.posts[0]['resource'] %}
   {% include pb_blog/pb_blog_post_card.html featured="true" %}
 {% endif %}
 
-{% if site.data.bird.blog.published_posts.size > 1 %}
-  <div class="pb-blog-index">
-    {% for blog_post in site.data.bird.blog.published_posts %}
-      {% if forloop.first == false %}
-        {% include pb_blog/pb_blog_post_card.html %}
-      {% endif %}
-    {% endfor%}
-  </div>
-{% endif %}
+<div class="pb-blog-index">
+  {% for blog_post_page in paginator.posts %}
+    {% if paginator.page != 1 or forloop.first == false %}
+      {% assign blog_post = blog_post_page['resource'] %}
+      {% include pb_blog/pb_blog_post_card.html %}
+    {% endif %}
+  {% endfor %}
+
+  {% include pb_blog/pb_pagination.html %}
+</div>
