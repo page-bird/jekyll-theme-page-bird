@@ -1,10 +1,10 @@
 url: "https://github.com/page-bird/jekyll-theme-page-bird"
 page_bird:
-  website_id: "0d48a581"
+  website_id: "42321225"
   popup: true
   seo:
     title: "Jekyll Theme Page Bird"
     description: "This is the default theme Page Bird uses for its websites."
     image_url: "https://www.page-bird.com/fb_og.jpg"
     locale: "en_US"
-  api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
+  # api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
