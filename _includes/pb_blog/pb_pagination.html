@@ -1,0 +1,30 @@
+{% if paginator.previous_page or paginator.next_page %}
+  <div class="pagination">
+    <div class="pagination--block">
+      {% if paginator.previous_page %}
+        <a class="pagination-item" href="{{ paginator.previous_page_path }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Prev
+        </a>
+      {% else %}
+        <span class="pagination-item disabled">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Prev
+        </span>
+      {% endif %}
+    </div>
+    <div class="pagination--block">
+      {% if paginator.next_page %}
+        <a class="pagination-item" href="{{ paginator.next_page_path }}">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      {% else %}
+        <span class="pagination-item disabled">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </span>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

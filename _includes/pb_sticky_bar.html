@@ -1,7 +1,7 @@
 {% if site.data.bird.sticky_bar.active %}
   <a href="{{ site.data.bird.sticky_bar.link }}"
      class="pb-sticky-bar"
-     style="{% if site.data.bird.sticky_bar.background_color.length > 0 %} background-color: {{ site.data.bird.sticky_bar.background_color.length }}; {% endif %} {% if site.data.bird.sticky_bar.color.length > 0 %} color: {{ site.data.bird.sticky_bar.color }}; {% endif %}">
+     style="background-color: {{ site.data.bird.sticky_bar.background_color }}; color: {{ site.data.bird.sticky_bar.color }};">
     {{ site.data.bird.sticky_bar.content }}
   </a>
 {% endif %}
