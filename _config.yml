@@ -1,7 +1,9 @@
 url: "https://github.com/page-bird/jekyll-theme-page-bird"
 page_bird:
   website_id: "42321225"
-  popup: true
+  popup:
+    active: true
+    exclude_pages: ["thanks"]
   seo:
     title: "Jekyll Theme Page Bird"
     description: "This is the default theme Page Bird uses for its websites."

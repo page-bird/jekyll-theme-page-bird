@@ -1,5 +1,7 @@
-{% if site.page_bird.popup %}
-  {% include pb_popup/pb_popup.html %}
+{% if site.page_bird.popup.active %}
+  {% unless site.page_bird.popup.exclude_pages contains page.page_name %}
+    {% include pb_popup/pb_popup.html %}
+  {% endunless %}
 {% endif %}
 
 {% include custom_footer.html %}
