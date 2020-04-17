@@ -1,5 +1,33 @@
 // Page Bird Javascript 🦜
 
+// Page Bird Sticky Bar
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector(".pb-sticky-bar--close").addEventListener("click", function(e) {
+    e.preventDefault()
+    closePbStickyBar()
+  })
+
+  if ( hasSeenPbStickyBar() ) {
+    document.querySelector(".pb-sticky-bar").remove()
+  }
+})
+
+function closePbStickyBar() {
+  const sticky = document.querySelector(".pb-sticky-bar")
+
+  sticky.classList.add("removing")
+  setTimeout(function(){ sticky.remove() }, 200);
+  localStorage.setItem('has-seen-pb-sticky-bar', getPbStickyBarContent())
+}
+
+function hasSeenPbStickyBar() {
+  return localStorage.getItem('has-seen-pb-sticky-bar') == getPbStickyBarContent()
+}
+
+function getPbStickyBarContent() {
+  return document.querySelector(".pb-sticky-bar--content").innerText
+}
+
 // Page Bird Popup
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll(".pb-popup .close").forEach(function(el) {
@@ -104,7 +132,3 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector(".pb-password-overlay").remove()
   }
 })
-
-function _removePasswordOverlay() {
-
-}
