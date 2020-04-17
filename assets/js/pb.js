@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if ( input.value == atob(pass) ) {
         sessionStorage.setItem('pb-password-' + window.location.pathname, 'true')
         document.body.classList.remove("pb-password-protected-page")
-        document.querySelector(".pb-password-overlay").classList.add("hidden");
+        document.querySelector(".pb-password-overlay").classList.add("pb-hidden");
       } else {
         input.classList.add("shake", "border-red")
         setTimeout(function(){ input.classList.remove("shake", "border-red") }, 1000);
@@ -99,6 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   if (sessionStorage.getItem('pb-password-' + window.location.pathname) == "true") {
     document.body.classList.remove("pb-password-protected-page")
-    document.querySelector(".pb-password-overlay").classList.add("hidden");
+    document.querySelector(".pb-password-overlay").classList.add("pb-hidden");
   }
 })
