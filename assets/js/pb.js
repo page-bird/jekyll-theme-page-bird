@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   if (sessionStorage.getItem('pb-password-' + window.location.pathname) == "true") {
-    removePasswordOverlay()
+    _removePasswordOverlay()
   }
 })
 
