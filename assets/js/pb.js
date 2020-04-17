@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const pass = this.getAttribute("data-p")
       const input = this.querySelector("input[type=password]")
 
-      if ( input.value == pass ) {
+      if ( input.value == atob(pass) ) {
         document.body.classList.remove("pb-password-protected-page")
         document.querySelector(".pb-password-overlay").classList.add("hidden");
       } else {
