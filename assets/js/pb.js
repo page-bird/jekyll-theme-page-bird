@@ -74,3 +74,23 @@ function updateProgressBar(bar) {
   var scrolled = (winScroll / height) * 100;
   bar.style.width = scrolled + "%";
 }
+
+// Password Protect Pages
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll("form[data-behavior~=pb-password-page]").forEach(function(el) {
+    el.addEventListener("submit", function(e) {
+      e.preventDefault()
+      const pass = this.getAttribute("data-p")
+      const input = this.querySelector("input[type=password]")
+
+      if ( input.value == pass ) {
+        document.body.classList.remove("pb-password-protected-page")
+        document.querySelector(".pb-password-overlay").classList.add("hidden");
+      } else {
+        input.classList.add("shake", "border-red")
+        setTimeout(function(){ input.classList.remove("shake", "border-red") }, 1000);
+      }
+    })
+  })
+})

@@ -5,4 +5,9 @@
 {% endif %}
 
 {% include custom_footer.html %}
+
+{% if page.password %}
+  {% include pb_password_screen.html %}
+{% endif %}
+
 {{ site.data.bird.code_snippet_footer }}
