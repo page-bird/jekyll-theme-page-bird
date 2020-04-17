@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const input = this.querySelector("input[type=password]")
 
       if ( input.value == atob(pass) ) {
+        sessionStorage.setItem('pb-password-' + window.location.pathname, 'true')
         document.body.classList.remove("pb-password-protected-page")
         document.querySelector(".pb-password-overlay").classList.add("hidden");
       } else {
@@ -93,4 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     })
   })
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (sessionStorage.getItem('pb-password-' + window.location.pathname) == "true") {
+    document.body.classList.remove("pb-password-protected-page")
+    document.querySelector(".pb-password-overlay").classList.add("hidden");
+  }
 })
