@@ -21,6 +21,10 @@
   }
 }
 
+.pb-lead {
+  font-size: 1.25rem;
+}
+
 .pb-icon-wrapper {
   display: flex;
   align-items: center;
@@ -38,35 +42,12 @@
   }
 }
 
-.pb-form {
-  position: relative;
-  width: 100%;
-}
-
-.pb-input {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #cccccc;
-  padding: 10px 15px;
-  font-size: 1rem;
-  background-color: white;
-  margin: 0;
-  transition: 200ms all ease-in-out;
-
-  &:hover {
-    border-color: darken(#cccccc, 15%);
-  }
-
-  &:focus, &:active {
-    outline: none;
-    border-color: rgb(35, 146, 236);
-  }
-
-  &[disabled='disabled'], &[readonly='readonly'] {
-    background-color: #f9f6f6;
-  }
-}
-
 .border-red {
   border-color: #F53636 !important;
+}
+
+.visually-hidden {
+  text-indent: -1000em;
+  margin: 0 !important;
+  height: 1px;
 }

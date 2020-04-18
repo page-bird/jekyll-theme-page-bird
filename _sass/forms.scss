@@ -1,0 +1,40 @@
+.pb-form {
+  position: relative;
+  width: 100%;
+
+  label {
+    display: block;
+    margin: 1em 0 0 0;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    text-align: left;
+  }
+}
+
+.pb-input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: white;
+  margin: 0;
+  transition: 200ms all ease-in-out;
+
+  &:focus, &:active {
+    outline: none;
+    border-color: rgb(35, 146, 236);
+  }
+
+  &[disabled='disabled'], &[readonly='readonly'] {
+    background-color: #f9f6f6;
+  }
+}
+
+.pb-button {
+  background-color: rgb(35, 146, 236);
+  border-color: rgb(35, 146, 236);
+  color: white;
+  cursor: pointer;
+}

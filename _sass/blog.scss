@@ -250,3 +250,22 @@
     }
   }
 }
+
+.pb-signup-for-newsletter {
+  padding: 4rem 0;
+  text-align: center;
+
+  .pb-lead {
+    margin-bottom: 1rem;
+  }
+
+  .pb-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pb-button {
+    margin-left: 0.25rem;
+  }
+}
