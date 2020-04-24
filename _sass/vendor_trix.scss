@@ -184,4 +184,14 @@
     background-size: 350% 100%;
     min-height: 80px;
   }
+
+  .action-text-embed {
+    margin: 1.5rem 0;
+  }
+
+  blockquote {
+    border-left: 3px solid rgba(0,0,0,.84);
+    margin-left: 0px;
+    padding: 4px 0 4px 24px;
+  }
 }

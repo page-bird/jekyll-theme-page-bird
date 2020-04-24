@@ -2,10 +2,14 @@
 
 // Page Bird Sticky Bar
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector(".pb-sticky-bar--close").addEventListener("click", function(e) {
-    e.preventDefault()
-    closePbStickyBar()
-  })
+  let close = document.querySelector(".pb-sticky-bar--close");
+
+  if (close) {
+    close.addEventListener("click", function(e) {
+      e.preventDefault()
+      closePbStickyBar()
+    })
+  }
 
   if ( hasSeenPbStickyBar() ) {
     document.querySelector(".pb-sticky-bar").remove()
@@ -25,7 +29,8 @@ function hasSeenPbStickyBar() {
 }
 
 function getPbStickyBarContent() {
-  return document.querySelector(".pb-sticky-bar--content").innerText
+  let content = document.querySelector(".pb-sticky-bar--content")
+  return content && content.innerText
 }
 
 // Page Bird Popup
