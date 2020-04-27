@@ -67,7 +67,6 @@ function pbPopupToggle() {
 }
 
 // Blog Post Share Buttons
-
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll(".js-blog-share").forEach(function(el) {
     el.addEventListener("click", function(e) {
@@ -92,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Blog Post Progress Bar
-
 document.addEventListener('DOMContentLoaded', function() {
   let pbProgressBar = document.getElementsByClassName("pb-blog-post--progress-bar")[0]
 
@@ -109,7 +107,6 @@ function updateProgressBar(bar) {
 }
 
 // Password Protect Pages
-
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll("form[data-behavior~=pb-password-page]").forEach(function(el) {
     el.addEventListener("submit", function(e) {
@@ -124,8 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector(".pb-password-overlay").classList.add("pb-hidden");
         setTimeout(function(){ document.querySelector(".pb-password-overlay").remove() }, 250);
       } else {
-        input.classList.add("shake", "border-red")
-        setTimeout(function(){ input.classList.remove("shake", "border-red") }, 1000);
+        showErrorOnInput(input)
       }
     })
   })
@@ -137,3 +133,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector(".pb-password-overlay").remove()
   }
 })
+
+// Submit New Newsletter Subscriber Form
+document.addEventListener('DOMContentLoaded', function() {
+  let pbNewsletterSubscriptionForm = document.querySelector("#newsletter-subscription-form")
+
+  if (pbNewsletterSubscriptionForm) {
+    pbNewsletterSubscriptionForm.addEventListener("submit", function(e) {
+      e.preventDefault()
+
+      fetch(pbNewsletterSubscriptionForm.getAttribute("action"), {
+        method: 'POST',
+        body: new FormData(pbNewsletterSubscriptionForm)
+      }).then(function(response) {
+        let iconWrapper = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-icon-wrapper")
+        let leadText = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-lead")
+
+        iconWrapper.outerHTML = `
+          <svg class="pb-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+        `
+
+        leadText.textContent = `
+          Thank you for subscribing!
+        `
+
+        pbNewsletterSubscriptionForm.remove();
+      }).catch(function(ex) {
+        showErrorOnInput(pbNewsletterSubscriptionForm.querySelector("input[type=email]"))
+      })
+    })
+  }
+})
+
+// Shared Methods
+function showErrorOnInput(input) {
+  input.classList.add("shake", "border-red")
+  setTimeout(function(){ input.classList.remove("shake", "border-red") }, 1000);
+}
