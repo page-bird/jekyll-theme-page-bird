@@ -40,8 +40,14 @@
   }
 
   .pb-blog-post--meta {
-    margin-top: 8px;
+    margin-top: 4px;
     font-size: 80%;
+    color: rgba(black, 0.6);
+  }
+
+  .pb-blog-post--author {
+    margin-top: 8px;
+    font-size: 86%;
     color: rgba(black, 0.6);
   }
 
