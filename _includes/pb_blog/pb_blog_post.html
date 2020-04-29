@@ -3,14 +3,10 @@
     {{ blog_post.title }}
   </h1>
 
-
-
   <div class="pb-blog-post--header">
-    <div>
-      {% include pb_blog/pb_blog_post_author.html %}
-      {% include pb_blog/pb_blog_post_meta.html %}
-    </div>
-      {% include pb_blog/pb_blog_post_sharing.html %}
+    {% include pb_blog/pb_blog_post_meta.html %}
+
+    {% include pb_blog/pb_blog_post_sharing.html %}
   </div>
 
   {{ blog_post.content_as_html }}
