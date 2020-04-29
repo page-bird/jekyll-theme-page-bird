@@ -37,6 +37,7 @@
 
   .pb-blog-post--excerpt {
     margin-top: 4px;
+    color: rgba(black, 0.6);
   }
 
   .pb-blog-post--meta {
@@ -173,7 +174,17 @@
 
 .pb-blog-post--meta {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .pb-blog-post--author {
+    color: rgba(0, 0, 0, 0.843137);
+  }
+
+  .pg-blog-post--meta-bottom {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .pb-blog-post--sharing {

@@ -1,13 +1,21 @@
 <div class="pb-blog-post--meta">
-  <div class="pb-blog-post--author">
-  </div>
-  <div class="pb-blog-post--date">
-    {{ blog_post.published_at | date_to_long_string: "ordinal", "US"  }}
-  </div>
-  <div class="dot-divider"></div>
-  <div class="pb-blog-post--time-to-read">
-    {% assign minutes = blog_post.content_as_plain_text | number_of_words | divided_by: 180.0 | round %}
-    {% if minutes == 0 %} {% assign minutes = 1 %} {% endif %}
-    {{ minutes }} minute read
+  {% if blog_post.author_name %}
+    <div class="pb-blog-post--author">
+      {{ blog_post.author_name  }}
+    </div>
+  {% endif %}
+
+  <div class="pg-blog-post--meta-bottom">
+    <div class="pb-blog-post--date">
+      {{ blog_post.published_at | date_to_long_string: "ordinal", "US"  }}
+    </div>
+
+    <div class="dot-divider"></div>
+
+    <div class="pb-blog-post--time-to-read">
+      {% assign minutes = blog_post.content_as_plain_text | number_of_words | divided_by: 180.0 | round %}
+      {% if minutes == 0 %} {% assign minutes = 1 %} {% endif %}
+      {{ minutes }} minute read
+    </div>
   </div>
 </div>
