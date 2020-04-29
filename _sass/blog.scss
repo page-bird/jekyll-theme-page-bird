@@ -162,10 +162,21 @@
     }
   }
 
-  .pb-blog-post--author {
-    margin-top: 8px;
-    color: rgba(black, 0.6);
+  .pb-blog-post--header {
+    position: relative;
   }
+
+  .pb-blog-post--author {
+    position: absolute;
+    bottom: 20px ;
+    margin-bottom: 2px;
+  }
+
+  .pb-blog-post--date,
+  .pb-blog-post--time-to-read {
+    margin-top: 16px;
+  }
+
 
   @media (max-width: 768px) {
     color: rgba(0, 0, 0, 0.843137);
