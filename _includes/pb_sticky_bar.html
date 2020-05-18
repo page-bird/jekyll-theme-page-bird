@@ -1,10 +1,13 @@
 {% if site.data.bird.sticky_bar.active %}
   <div class="pb-sticky-bar"
      style="background-color: {{ site.data.bird.sticky_bar.background_color }}; color: {{ site.data.bird.sticky_bar.color }};">
-    <a href="{{ site.data.bird.sticky_bar.link }}" class="pb-sticky-bar--link"></a>
+
+    {% if site.data.bird.sticky_bar.link != '' %}
+      <a href="{{ site.data.bird.sticky_bar.link }}" class="pb-sticky-bar--link"></a>
+    {% endif %}
 
     <div class="pb-sticky-bar--content">
-      {{ site.data.bird.sticky_bar.content_as_html.body }}
+      {{ site.data.bird.sticky_bar.content_as_html }}
     </div>
 
     <div class="pb-sticky-bar--close">
