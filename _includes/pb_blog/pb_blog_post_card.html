@@ -14,6 +14,9 @@
       </div>
 
       {% include pb_blog/pb_blog_post_meta.html %}
+      {% if blog_post.tag_list %}
+      <div>{{ blog_post.tag_list }}</div>
+      {% endif %}
     </div>
   </div>
 </div>
