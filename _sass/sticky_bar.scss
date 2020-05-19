@@ -20,6 +20,13 @@
     left: 0;
   }
 
+  .pb-sticky-bar--content a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+
+
   .pb-sticky-bar--close {
     cursor: pointer;
     display: flex;
