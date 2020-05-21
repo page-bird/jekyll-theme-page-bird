@@ -1,0 +1,54 @@
+<div class="pb-event-card">
+  <a href="/events/{{ event.slug }}" class="absolute-link"></a>
+
+  <div class="pb-img-wrapper img-animated {% unless event.media_url %} no-img {% endunless %}">
+    {% if event.media_url %}
+      <img src="{{ event.media_url }}">
+    {% endif %}
+  
+    <div class="pb-date-tag">
+      <div class="pb-date-tag--month">
+        {{ event.start_at | date: "%b" }}
+      </div>
+      <div class="pb-date-tag--day">
+        {{ event.start_at | date: "%e" }}
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <h3 class="pb-event-card--title"> {{ event.name }} </h3>
+  
+    <div class="pb-event-card--meta">
+      <div class="pb-event-card--date">
+        {% assign start_date = event.start_at | date: "%a, %b %e, %Y" %}
+
+        {% if event.end_at %}
+          {% assign end_date = event.end_at | date: "%a, %b %e, %Y" %}
+        {% endif %}
+
+        {% if event.end_at and start_date == end_date %}
+          {{ event.start_at | date: "%a, %b %e, %Y"  }} <br>
+          {{ event.start_at | date: "%l:%M %p"  }}
+
+          {% if event.end_at %}
+            — {{ event.end_at | date: "%l:%M %p" }}
+          {% endif %}
+        {% else %}
+          {{ event.start_at | date: "%a, %b %e, %Y, %l:%M %p"  }}
+
+          {% if event.end_at %}
+            — {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="pb-event-card--address">
+        {{ event.location }}
+      </div>
+    </div>
+  
+    <div class="pb-event-card--content">
+      {{ event.preview_description }}
+    </div>
+  </div>
+</div>

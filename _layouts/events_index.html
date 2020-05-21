@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{% include navbar.html %}
+
+<div class="pb-events-index">
+  {% for event in site.data.bird.events_active %}
+    {% assign event = event['resource'] %}
+    {% include pb_events/event_card.html %}
+  {% endfor %}
+</div>
