@@ -2,7 +2,7 @@
   <div class="pb-sticky-bar"
      style="background-color: {{ site.data.bird.sticky_bar.background_color }}; color: {{ site.data.bird.sticky_bar.color }};">
 
-    {% if site.data.bird.sticky_bar.link != '' %}
+    {% if site.data.bird.sticky_bar.link.size != 0 %}
       <a href="{{ site.data.bird.sticky_bar.link }}" class="pb-sticky-bar--link"></a>
     {% endif %}
 
