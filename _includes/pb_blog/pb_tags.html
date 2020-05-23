@@ -1,0 +1,5 @@
+<div class="pb-tags">
+  {% for tag in blog_post.tags %}
+    <a class="pb-tag" href="/blog/tags/{{ tag.name }}">{{ tag.name }}</a>
+  {% endfor %}
+</div>

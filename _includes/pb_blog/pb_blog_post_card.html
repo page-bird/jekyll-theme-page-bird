@@ -1,10 +1,10 @@
 <div class="pb-blog-post-card {% if include.featured %} featured {% endif %} {% if blog_post.preview_img_url %} has-preview-img {% endif %} ">
-  <div class="pg-blog-post-card--content-wrapper">
     {% if blog_post.preview_img_url %}
       <img src="{{ blog_post.preview_img_url }}">
     {% endif %}
 
-    <div>
+  <div class="pg-blog-post-card--content-wrapper">
+    <div class="pg-blog-post-card--content">
       <h3> {{ blog_post.title }} </h3>
 
       <div class="pb-blog-post--excerpt">
@@ -12,12 +12,12 @@
       </div>
 
       {% include pb_blog/pb_blog_post_meta.html %}
-
+    </div>
+    
+    <div class="pb-blog-post-card--footer">
       {% if blog_post.tags %}
-        <div class="pb-tags pb-mt-2">
-          {% for tag in blog_post.tags %}
-            <a class="pb-tag" href="/blog/tags/{{ tag.name }}">{{ tag.name }}</a>
-          {% endfor %}
+        <div class="pb-mt-2">
+          {% include pb_blog/pb_tags.html %}
         </div>
       {% endif %}
     </div>
