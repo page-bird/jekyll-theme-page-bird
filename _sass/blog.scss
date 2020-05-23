@@ -1,6 +1,11 @@
 .pb-blog-index {
   max-width: 778px;
   margin: 0 auto 2rem;
+
+  .pb-title-prefix {
+    margin-top: 2rem;
+    text-align: center;
+  }
 }
 
 .pb-blog-post-card {

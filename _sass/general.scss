@@ -5,6 +5,10 @@ $white: #fff;
   box-sizing: border-box;
 }
 
+.center {
+  text-align: center;
+}
+
 .absolute-link {
   position: absolute;
   height: 100%;
@@ -54,3 +58,15 @@ $white: #fff;
   margin: 0 !important;
   height: 1px;
 }
+
+.pb-title-prefix {
+  color: rgba(0,0,0,.54);
+  font-size: 14px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.pb-mt-0 { margin-top: 0rem; }
+.pb-mb-0 { margin-bottom: 0rem; }
+.pb-mt-4 { margin-top: 2rem; }
+.pb-mb-4 { margin-bottom: 2rem; }
