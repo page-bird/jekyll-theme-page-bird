@@ -295,3 +295,22 @@
     margin-left: 0.25rem;
   }
 }
+
+.pb-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pb-tag {
+  position: relative;
+  display: block;
+  padding: 5px 8px;
+  margin: 5px 5px 5px 0;
+  background-color: rgba(0, 0, 0, 0.0470588);
+  color: rgba(0, 0, 0, 0.541176);
+  line-height: 1;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  z-index: 10;
+  text-decoration: none;;
+}

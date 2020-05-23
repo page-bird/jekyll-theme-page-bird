@@ -1,6 +1,4 @@
 <div class="pb-blog-post-card {% if include.featured %} featured {% endif %} {% if blog_post.preview_img_url %} has-preview-img {% endif %} ">
-  <a href="/blog/{{ blog_post.slug }}" class="absolute-link"></a>
-
   <div class="pg-blog-post-card--content-wrapper">
     {% if blog_post.preview_img_url %}
       <img src="{{ blog_post.preview_img_url }}">
@@ -14,6 +12,16 @@
       </div>
 
       {% include pb_blog/pb_blog_post_meta.html %}
+
+      {% if blog_post.tags %}
+        <div class="pb-tags pb-mt-2">
+          {% for tag in blog_post.tags %}
+            <a class="pb-tag" href="/blog/tags/{{ tag.name }}">{{ tag.name }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </div>
+
+  <a href="/blog/{{ blog_post.slug }}" class="absolute-link"></a>
 </div>

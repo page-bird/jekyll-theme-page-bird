@@ -16,7 +16,7 @@ $white: #fff;
   top: 0;
   left: 0;
   cursor: pointer;
-  z-index: 30;
+  z-index: 5;
 }
 
 .dot-divider {
@@ -68,5 +68,7 @@ $white: #fff;
 
 .pb-mt-0 { margin-top: 0rem; }
 .pb-mb-0 { margin-bottom: 0rem; }
+.pb-mt-2 { margin-top: 0.5rem; }
+.pb-mb-2 { margin-bottom: 0.5rem; }
 .pb-mt-4 { margin-top: 2rem; }
 .pb-mb-4 { margin-bottom: 2rem; }
