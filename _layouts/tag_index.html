@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% include navbar.html %}
+
+<div class="pb-blog-index">
+  <h1>{{ page.resource['name'] | capitalize }}</h1>
+
+  {% for blog_post in site.data.bird.blog.published_posts %}
+    {% include pb_blog/pb_blog_post_card.html %}
+  {% endfor %}
+</div>
