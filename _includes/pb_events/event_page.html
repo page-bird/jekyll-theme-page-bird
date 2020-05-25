@@ -1,1 +1,50 @@
-Hello
+<div class="pb-event">
+  <div class="pg-event-banner--content-wrapper">
+    <div class="{% unless event.media_url %} no-img {% endunless %}">
+      {% if event.media_url %}
+        <img src="{{ event.media_url }}">
+      {% endif %}
+    </div>
+    <div>
+      <h1 class="title">
+        {{ event.name }}
+      </h1>
+
+      <div class="pb-blog-post--header">
+        {% assign start_date = event.start_at | date: "%a, %b %e, %Y" %}
+
+        {% if event.end_at %}
+          {% assign end_date = event.end_at | date: "%a, %b %e, %Y" %}
+        {% endif %}
+
+        {% if event.end_at and start_date == end_date %}
+          {{ event.start_at | date: "%a, %b %e, %Y"  }} <br>
+          {{ event.start_at | date: "%l:%M %p"  }}
+
+          {% if event.end_at %}
+            — {{ event.end_at | date: "%l:%M %p" }}
+          {% endif %}
+        {% else %}
+          {{ event.start_at | date: "%a, %b %e, %Y, %l:%M %p"  }}
+
+          {% if event.end_at %}
+            — {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% if event.location %}
+      <div>
+        <a href="https://www.google.com/maps/place/{{ event.location }}">{{ event.location }}</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="pb-event-description">
+      <h2 class="about">About this event</h2>
+      {{ event.description_as_html }}
+    </div>
+  </div>
+</div>
+
+
+
