@@ -12,10 +12,10 @@
   max-width: 980px;
   margin: 2rem auto;
 
-  .pg-event-banner--content-wrapper {
+  .pg-event--content-wrapper {
     display: grid;
     grid-column-gap: 8%;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 55% 37%;
     max-width: none;
     min-height: 400px;;
   }
@@ -23,6 +23,12 @@
   img {
     width: 100%;
     max-height: 600px;
+  }
+
+  h1.title {
+    margin: 0 0 1rem;
+    font-size: 3.125rem;
+    line-height: 1.12;
   }
 
   h3 {
@@ -39,14 +45,14 @@
   @media (max-width: 768px) {
     padding: 1rem;
 
-    .pg-event-banner--content-wrapper {
+    .pg-event--content-wrapper {
       display: block;
       min-height: 0;
     }
 
     img {
       max-width: 100%;
-      max-height: 200px;
+      max-height: 300px;
       margin-bottom: 0.75rem;
     }
 
@@ -91,6 +97,7 @@
 }
 
 
+// Styles for event cards in events_index.html
 
 .pb-event-card {
   position: relative;

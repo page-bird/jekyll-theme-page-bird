@@ -1,5 +1,5 @@
 <div class="pb-event">
-  <div class="pg-event-banner--content-wrapper">
+  <div class="pg-event--content-wrapper">
     <div class="{% unless event.media_url %} no-img {% endunless %}">
       {% if event.media_url %}
         <img src="{{ event.media_url }}">
@@ -35,15 +35,27 @@
 
       {% if event.location %}
       <div>
-        <a href="https://www.google.com/maps/place/{{ event.location }}">{{ event.location }}</a>
+        <p>
+          {{ event.location }} <br>
+          <span>
+            <a href="https://www.google.com/maps/place/{{ event.location }}" target="_blank">Map↗</a>
+          </span>
+        </p>
       </div>
       {% endif %}
-    </div>
-    <div class="pb-event-description">
-      <h2 class="about">About this event</h2>
-      {{ event.description_as_html }}
+
+      <a href="#event-registration-form">Register now</a>
     </div>
   </div>
+  <div class="pb-event-description">
+    <h2 class="about">About this event</h2>
+    <p style="padding-right: 0">
+      {{ event.description_as_html }}
+    </p>
+  </div>
+
+  {% include pb_events/pb_registration_for_event.html %}
+
 </div>
 
 
