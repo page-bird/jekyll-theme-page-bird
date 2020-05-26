@@ -1,7 +1,7 @@
 .pb-sticky-bar {
+  display: none;
   position: relative;
   width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -45,9 +45,8 @@
     background-position: 100% 0;
   }
 
-  &.removing {
-    opacity: 0;
-    transform: translateY(-10px);
+  &.show {
+    display: flex;
   }
 
   @media(max-width: 991px) {

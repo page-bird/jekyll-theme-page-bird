@@ -1,15 +1,16 @@
+GIT
+  remote: https://pagebirdapi:fT7zfPWbZsrNJ9YX6t9BNe9e@github.com/page-bird/jekyll-bird-plugins.git
+  revision: ab1d791291d4b558a0043660af19766c34876210
+  specs:
+    jekyll-bird-plugins (0.1.0)
+      jekyll
+
 PATH
   remote: .
   specs:
     jekyll-theme-page-bird (0.1.0)
       jekyll (~> 4.0)
       jekyll-sitemap
-
-PATH
-  remote: ../jekyll-bird-plugins
-  specs:
-    jekyll-bird-plugins (0.1.0)
-      jekyll
 
 GEM
   remote: https://rubygems.org/

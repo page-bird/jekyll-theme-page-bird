@@ -11,16 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   }
 
-  if ( hasSeenPbStickyBar() ) {
-    document.querySelector(".pb-sticky-bar").remove()
+  if ( !hasSeenPbStickyBar() ) {
+    document.querySelector(".pb-sticky-bar").classList.add("show")
   }
 })
 
 function closePbStickyBar() {
   const sticky = document.querySelector(".pb-sticky-bar")
-
-  sticky.classList.add("removing")
-  setTimeout(function(){ sticky.remove() }, 200);
+  sticky.classList.remove("show")
   localStorage.setItem('has-seen-pb-sticky-bar', getPbStickyBarContent())
 }
 
