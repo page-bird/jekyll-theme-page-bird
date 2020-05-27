@@ -337,5 +337,7 @@
 
   &:hover, &:focus, &:active {
     transform: scale(1.15);
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.541176);
   }
 }
