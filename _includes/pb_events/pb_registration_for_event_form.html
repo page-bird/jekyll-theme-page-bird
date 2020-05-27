@@ -1,22 +1,22 @@
-<form id="event-registration-form" class="pb-form" accept-charset="UTF-8" action="http://localhost:3000/event_registration/{{ event.random_id }}" method="POST">
+<form id="event-registration-form" class="" accept-charset="UTF-8" action="http://localhost:3000/event_registration/{{ event.random_id }}" method="POST">
 
   <label for="first_name" class="visually-hidden">First Name</label>
-  <input class="pb-input" required="" name="registration[first_name]" type="text" placeholder="Enter your First Name">
+  <input class="pb-input large" required="" name="registration[first_name]" type="text" placeholder="Enter your First Name">
 
   <label for="last_name" class="visually-hidden">Last Name</label>
-  <input class="pb-input" required="" name="registration[last_name]" type="text" placeholder="Enter your Last Name">
+  <input class="pb-input large" required="" name="registration[last_name]" type="text" placeholder="Enter your Last Name">
 
   <label for="email" class="visually-hidden">Email</label>
-  <input class="pb-input" required="" name="registration[email]" type="email" placeholder="Enter your Email Address">
+  <input class="pb-input large" required="" name="registration[email]" type="email" placeholder="Enter your Email Address">
 
   <label for="phone_number" class="visually-hidden">Phone Number</label>
-  <input class="pb-input" name="registration[phone_number]" type="phone" placeholder="+1 (512) 155-555">
+  <input class="pb-input large" name="registration[phone_number]" type="phone" placeholder="+1 (512) 155-555">
 
   <!-- :email, :first_name, :last_name, :address, :phone_number, :company -->
 
   <input type="text" name="_gotcha" style="display:none">
 
   <div class="center">
-    <input type="submit" value="Submit" class="pb-input pb-button">
+    <input type="submit" value="Submit" class="pb-input pb-button submit-button">
   </div>
 </form>

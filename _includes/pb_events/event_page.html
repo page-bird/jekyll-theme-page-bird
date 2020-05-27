@@ -1,16 +1,16 @@
-<div class="pb-event">
-  <div class="pg-event--content-wrapper">
-    <div class="{% unless event.media_url %} no-img {% endunless %}">
+  <div class="pb-event-banner">
+    <div class="pb-event-img-wrapper {% unless event.media_url %} no-img {% endunless %}">
       {% if event.media_url %}
         <img src="{{ event.media_url }}">
       {% endif %}
     </div>
-    <div>
+
+    <div class="pb-event-banner--content">
       <h1 class="title">
         {{ event.name }}
       </h1>
 
-      <div class="pb-blog-post--header">
+      <div class="">
         {% assign start_date = event.start_at | date: "%a, %b %e, %Y" %}
 
         {% if event.end_at %}
@@ -35,28 +35,26 @@
 
       {% if event.location %}
       <div>
-        <p>
-          {{ event.location }} <br>
-          <span>
-            <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">Map↗</a>
-          </span>
-        </p>
+        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">{{ event.location }}</a>
       </div>
       {% endif %}
-
-      <a href="#event-registration-form">Register now</a>
     </div>
-  </div>
-  <div class="pb-event-description">
-    <h2 class="about">About this event</h2>
-    <p style="padding-right: 0">
-      {{ event.description_as_html }}
-    </p>
+
   </div>
 
-  {% include pb_events/pb_registration_for_event.html %}
 
+<div class="pb-event">
+  <div class="pb-event--content-wrapper">
+    <div class="pb-event-description">
+      <h2 class="about">About this event</h2>
+        {{ event.description_as_html }} <br>
+        <img src="http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a56a53530fc51f2dbc2f3313c82334fdc7c57dca/map_img.jpg" alt="Event Map">
+    </div>
+
+    {% include pb_events/pb_registration_for_event.html %}
+  </div>
 </div>
+
 
 
 
