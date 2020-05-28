@@ -134,18 +134,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Submit New Newsletter Subscriber Form
 document.addEventListener('DOMContentLoaded', function() {
-  let pbNewsletterSubscriptionForm = document.querySelector("#newsletter-subscription-form")
+  let pbSubmitWithJsForm = document.querySelector("#pb-form-submit-with-js")
 
-  if (pbNewsletterSubscriptionForm) {
-    pbNewsletterSubscriptionForm.addEventListener("submit", function(e) {
+  if (pbSubmitWithJsForm) {
+    pbSubmitWithJsForm.addEventListener("submit", function(e) {
       e.preventDefault()
 
-      fetch(pbNewsletterSubscriptionForm.getAttribute("action"), {
+      fetch(pbSubmitWithJsForm.getAttribute("action"), {
         method: 'POST',
-        body: new FormData(pbNewsletterSubscriptionForm)
+        body: new FormData(pbSubmitWithJsForm)
       }).then(function(response) {
-        let iconWrapper = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-icon-wrapper")
-        let leadText = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-lead")
+        let iconWrapper = pbSubmitWithJsForm.closest(".pb-form-submit-js").querySelector(".pb-icon-wrapper")
+        console.log(iconWrapper)
+        let leadText = pbSubmitWithJsForm.closest(".pb-form-submit-js").querySelector(".pb-lead")
+        console.log(leadText)
 
         iconWrapper.outerHTML = `
           <svg class="pb-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
@@ -155,9 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
           Thank you for subscribing!
         `
 
-        pbNewsletterSubscriptionForm.remove();
+        pbSubmitWithJsForm.remove();
       }).catch(function(ex) {
-        showErrorOnInput(pbNewsletterSubscriptionForm.querySelector("input[type=email]"))
+        console.error(ex)
+        showErrorOnInput(pbSubmitWithJsForm.querySelector("input:not([type=submit])"))
       })
     })
   }

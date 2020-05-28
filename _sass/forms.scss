@@ -58,9 +58,12 @@
   box-shadow: 0 0 1em #e9e9e9;
   padding: 20px 1.5em;
 
-  .form-header {
+  .pb-lead {
     text-align: center;
-    margin-bottom: 1.5rem;
+  }
+
+  .pb-icon-wrapper {
+    border: none;
   }
 
   input:not([type=submit]) {
