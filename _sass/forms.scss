@@ -40,9 +40,13 @@
   cursor: pointer;
 }
 
+.pb-button.half-width {
+  width: 50%;
+}
+
 .pb-input.large {
   height: 50px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.7rem;
 }
 
 .pb-event-registration-form {
@@ -53,6 +57,20 @@
   width: 100%;
   box-shadow: 0 0 1em #e9e9e9;
   padding: 20px 1.5em;
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  input:not([type=submit]) {
+    background-color: #fcfdfd;
+  }
+
+  label {
+    color: #3d5154;
+    font-size: 14px;
+  }
 
   @media (max-width: 768px) {
     margin-top: 2rem;

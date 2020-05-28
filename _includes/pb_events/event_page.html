@@ -1,5 +1,5 @@
-  <div class="pb-event-banner">
-    <div class="pb-event-img-wrapper {% unless event.media_url %} no-img {% endunless %}">
+  <div class="pb-event-banner {% unless event.media_url %} small {% endunless %}">
+    <div class="{% if event.media_url %} pb-img-wrapper {% endif %}">
       {% if event.media_url %}
         <img src="{{ event.media_url }}">
       {% endif %}
@@ -48,7 +48,14 @@
     <div class="pb-event-description">
       <h2 class="about">About this event</h2>
         {{ event.description_as_html }} <br>
-        <img src="http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a56a53530fc51f2dbc2f3313c82334fdc7c57dca/map_img.jpg" alt="Event Map">
+
+        {% if event.map_url %}
+        <div class="pb-img-wrapper">
+          <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+            <img src="{{ event.map_url }}" alt="Event Map">
+          </a>
+        </div>
+        {% endif %}
     </div>
 
     {% include pb_events/pb_registration_for_event.html %}
