@@ -1,4 +1,4 @@
-  <div class="pb-event-banner {% unless event.media_url %} small {% endunless %}">
+  <div class="pb-event-banner {% unless event.media_url %} no-img {% endunless %}">
     <div class="{% if event.media_url %} pb-img-wrapper {% endif %}">
       {% if event.media_url %}
         <img src="{{ event.media_url }}">
