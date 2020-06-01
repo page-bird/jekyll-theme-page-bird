@@ -1,6 +1,7 @@
 GIT
   remote: https://pagebirdapi:fT7zfPWbZsrNJ9YX6t9BNe9e@github.com/page-bird/jekyll-bird-plugins.git
-  revision: ab1d791291d4b558a0043660af19766c34876210
+  revision: 1cd167e0d342c1c44d10cc51750b222eea7d0206
+  branch: events
   specs:
     jekyll-bird-plugins (0.1.0)
       jekyll

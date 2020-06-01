@@ -21,26 +21,7 @@
 
     <div class="pb-event-card--meta">
       <div class="pb-event-card--date">
-        {% assign start_date = event.start_at | date: "%a, %b %e, %Y" %}
-
-        {% if event.end_at %}
-          {% assign end_date = event.end_at | date: "%a, %b %e, %Y" %}
-        {% endif %}
-
-        {% if event.end_at and start_date == end_date %}
-          {{ event.start_at | date: "%a, %b %e, %Y"  }} <br>
-          {{ event.start_at | date: "%l:%M %p"  }}
-
-          {% if event.end_at %}
-            — {{ event.end_at | date: "%l:%M %p" }}
-          {% endif %}
-        {% else %}
-          {{ event.start_at | date: "%a, %b %e, %Y, %l:%M %p"  }}
-
-          {% if event.end_at %}
-            — {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
-          {% endif %}
-        {% endif %}
+        {% include pb_events/dates.html %}
       </div>
       <div class="pb-event-card--address">
         {{ event.location }}

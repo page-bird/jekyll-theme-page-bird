@@ -1,65 +1,44 @@
   <div class="pb-event-banner {% unless event.media_url %} no-img {% endunless %}">
-    <div class="{% if event.media_url %} pb-img-wrapper {% endif %}">
-      {% if event.media_url %}
+    {% if event.media_url %}
+      <div class="pb-img-wrapper">
         <img src="{{ event.media_url }}">
-      {% endif %}
-    </div>
+      </div>
+    {% endif %}
 
     <div class="pb-event-banner--content">
-      <h1 class="title">
+      <h1 class="pb-event--title">
         {{ event.name }}
       </h1>
 
-      <div class="">
-        {% assign start_date = event.start_at | date: "%a, %b %e, %Y" %}
-
-        {% if event.end_at %}
-          {% assign end_date = event.end_at | date: "%a, %b %e, %Y" %}
-        {% endif %}
-
-        {% if event.end_at and start_date == end_date %}
-          {{ event.start_at | date: "%a, %b %e, %Y"  }} <br>
-          {{ event.start_at | date: "%l:%M %p"  }}
-
-          {% if event.end_at %}
-            — {{ event.end_at | date: "%l:%M %p" }}
-          {% endif %}
-        {% else %}
-          {{ event.start_at | date: "%a, %b %e, %Y, %l:%M %p"  }}
-
-          {% if event.end_at %}
-            — {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
-          {% endif %}
-        {% endif %}
-      </div>
-
-      {% if event.location %}
       <div>
-        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">{{ event.location }}</a>
+        {% include pb_events/dates.html %}
       </div>
+
+      {% if event.location != "" %}
+        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+          {{ event.location }}
+        </a>
       {% endif %}
     </div>
-
   </div>
 
 
-<div class="pb-event">
-  <div class="pb-event--content-wrapper">
-    <div class="pb-event-description">
-      <h2 class="about">About this event</h2>
-        {{ event.description_as_html }} <br>
+<div class="pb-event--content-wrapper">
+  <div class="pb-event--body">
+    <h2 class="pb-event--subtitle">About this event</h2>
+    
+    {{ event.description_as_html }}
 
-        {% if event.map_url %}
-        <div class="pb-img-wrapper">
-          <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
-            <img src="{{ event.map_url }}" alt="Event Map">
-          </a>
-        </div>
-        {% endif %}
-    </div>
-
-    {% include pb_events/pb_registration_for_event.html %}
+    {% if event.map_url %}
+      <div class="pb-img-wrapper pb-mt-4">
+        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+          <img src="{{ event.map_url }}" alt="Event Map">
+        </a>
+      </div>
+    {% endif %}
   </div>
+
+  {% include pb_events/pb_registration_for_event.html %}
 </div>
 
 
