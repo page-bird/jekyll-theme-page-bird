@@ -1,6 +1,6 @@
 url: "https://github.com/page-bird/jekyll-theme-page-bird"
 page_bird:
-  website_id: "cb75d76e"
+  website_id: "42321225"
   popup:
     active: true
     exclude_pages: ["thanks"]
@@ -14,4 +14,4 @@ page_bird:
     share_facebook: true
     share_twitter: true
     share_linkedin: true
-  api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
+  # api_host: "http://localhost:3000" # Use localhost only for testing purposes. Else, delete this line.
