@@ -12,12 +12,17 @@
   text-decoration: none;
   transition: 200ms all ease-in;
 
-  a {
+  .pb-sticky-bar--link {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+  }
+
+  .pb-sticky-bar--content a {
+    color: inherit;
+    text-decoration: underline;
   }
 
   .pb-sticky-bar--close {
