@@ -25,6 +25,10 @@
     text-decoration: underline;
   }
 
+  .trix-content p {
+    margin-bottom: 0;
+  }
+
   .pb-sticky-bar--close {
     cursor: pointer;
     display: flex;
