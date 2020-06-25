@@ -165,25 +165,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Disable PBForms' Submit Button to prevent duplicated Submissions
 document.addEventListener('DOMContentLoaded', function() {
-  const allForms = document.querySelectorAll("form")
-  let pbForms = []
-  if (allForms) {
-    allForms.forEach(function(form) {
-      if (form.action.includes('https://www.page-bird.com/f/'))
-        pbForms.push(form)
+  const pbForms = Array.from(document.querySelectorAll("form")).filter(function(form) {
+    return form.action.includes('page-bird')
+  })
+
+  pbForms.forEach(function(form) {
+    form.querySelector("input[type=submit]").addEventListener('submit', function(e) {
+      e.target.disabled = true
     })
-  }
-  if (pbForms) {
-    let pbSubmitButtons = []
-    pbForms.forEach(function(form) {
-      pbSubmitButtons.push(form.querySelector("input[type='submit']"))
-    });
-    pbSubmitButtons.forEach(function(button) {
-      button.addEventListener('submit', function(e) {
-        e.target.disabled = true
-      })
-    })
-  }
+  });
 })
 
 // Shared Methods
