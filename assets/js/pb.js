@@ -170,8 +170,16 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   pbForms.forEach(function(form) {
-    form.querySelector("input[type=submit]").addEventListener('submit', function(e) {
-      e.target.disabled = true
+    form.querySelector("[type=submit]").addEventListener('click', function(e) {
+      pbLoadingButton = `
+        <div class="${this.classList.value} pb-button-disabled">
+          <div class="pb-loader-wrapper">
+            <div class='pb-loader'></div>Processing...
+          </div>
+        </div>
+      `
+      this.classList.add('hidden')
+      this.insertAdjacentHTML('afterend', pbLoadingButton )
     })
   });
 })
