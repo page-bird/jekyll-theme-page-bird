@@ -163,6 +163,27 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })
 
+// Disable PBForms' Submit Button to prevent duplicated Submissions
+document.addEventListener('DOMContentLoaded', function() {
+  const pbForms = Array.from(document.querySelectorAll("form")).filter(function(form) {
+    return form.action.includes('page-bird')
+  })
+
+  pbForms.forEach(function(form) {
+    form.querySelector("[type=submit]").addEventListener('click', function(e) {
+      pbLoadingButton = `
+        <div class="${this.classList.value} pb-button-disabled">
+          <div class="pb-loader-wrapper">
+            <div class='pb-loader'></div>Processing...
+          </div>
+        </div>
+      `
+      this.classList.add('hidden')
+      this.insertAdjacentHTML('afterend', pbLoadingButton )
+    })
+  });
+})
+
 // Shared Methods
 function showErrorOnInput(input) {
   input.classList.add("shake", "border-red")
