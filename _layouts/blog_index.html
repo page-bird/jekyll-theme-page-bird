@@ -4,20 +4,22 @@ layout: default
 
 {% include navbar.html %}
 
-{% if paginator.page == 1 and paginator.posts.size > 0 %}
-  {% assign blog_post = paginator.posts[0]['resource'] %}
-  {% include pb_blog/pb_blog_post_card.html featured="true" %}
-{% endif %}
+<div class="pb-blog-wrapper">
+  {% if paginator.page == 1 and paginator.posts.size > 0 %}
+    {% assign blog_post = paginator.posts[0]['resource'] %}
+    {% include pb_blog/pb_blog_post_card.html featured="true" %}
+  {% endif %}
 
-<div class="pb-blog-index">
-  <div class="pb-blog-index--cards">
-    {% for blog_post_page in paginator.posts %}
-      {% if paginator.page != 1 or forloop.first == false %}
-        {% assign blog_post = blog_post_page['resource'] %}
-        {% include pb_blog/pb_blog_post_card.html %}
-      {% endif %}
-    {% endfor %}
+  <div class="pb-blog-index">
+    <div class="pb-blog-index--cards">
+      {% for blog_post_page in paginator.posts %}
+        {% if paginator.page != 1 or forloop.first == false %}
+          {% assign blog_post = blog_post_page['resource'] %}
+          {% include pb_blog/pb_blog_post_card.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% include pb_blog/pb_pagination.html %}
   </div>
-
-  {% include pb_blog/pb_pagination.html %}
 </div>
