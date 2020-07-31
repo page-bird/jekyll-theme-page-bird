@@ -2,16 +2,22 @@
   position: relative;
   width: 100%;
 
-  label {
-    display: block;
-    margin: 1em 0 0 0;
-    font-weight: bold;
-    letter-spacing: -0.02em;
-    line-height: 1.5;
-    text-align: left;
+  &.pb-form--no-labels {
+    label {
+      display: block;
+      margin: 1em 0 0 0;
+      font-weight: bold;
+      letter-spacing: -0.02em;
+      line-height: 1.5;
+      text-align: left;
+    }
   }
 }
 
+.pb-input-wrapper {
+  margin-bottom: 1rem;
+  width: 100%;
+}
 
 .pb-input {
   width: 100%;
@@ -38,15 +44,6 @@
   border-color: rgb(35, 146, 236);
   color: white;
   cursor: pointer;
-}
-
-.pb-button.half-width {
-  width: 50%;
-}
-
-.pb-input.large {
-  height: 50px;
-  margin-bottom: 1.7rem;
 }
 
 .pb-event-registration-form {

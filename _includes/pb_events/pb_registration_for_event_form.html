@@ -1,21 +1,27 @@
-<form id="pb-form-submit-with-js" class="" accept-charset="UTF-8" action="https://www.page-bird.com/w/{{ site.page_bird.website_id }}/event_register/{{ event.random_id }}" method="POST">
-  <label for="first_name" class="visually-hidden">First Name</label>
-  <input class="pb-input large" required="" name="registration[first_name]" type="text" placeholder="Enter your First Name">
+<form id="pb-form-submit-with-js" class="pb-form" accept-charset="UTF-8" action="http://localhost:3000/w/{{ site.page_bird.website_id }}/event_register/{{ event.random_id }}" method="POST">
+  <div class="pb-input-wrapper">
+    <label for="first_name" class="visually-hidden">First Name</label>
+    <input class="pb-input" required="" name="registration[first_name]" type="text" placeholder="Enter your First Name">
+  </div>
 
-  <label for="last_name" class="visually-hidden">Last Name</label>
-  <input class="pb-input large" required="" name="registration[last_name]" type="text" placeholder="Enter your Last Name">
+  <div class="pb-input-wrapper">
+    <label for="last_name" class="visually-hidden">Last Name</label>
+    <input class="pb-input" required="" name="registration[last_name]" type="text" placeholder="Enter your Last Name">
+  </div>
 
-  <label for="email" class="visually-hidden">Email</label>
-  <input class="pb-input large" required="" name="registration[email]" type="email" placeholder="Enter your Email Address">
+  <div class="pb-input-wrapper">
+    <label for="email" class="visually-hidden">Email</label>
+    <input class="pb-input" required="" name="registration[email]" type="email" placeholder="Enter your Email Address">
+  </div>
 
-  <label for="phone_number" class="visually-hidden">Phone Number</label>
-  <input class="pb-input large" name="registration[phone_number]" type="phone" placeholder="+1 (512) 155-555">
-
-  <!-- :email, :first_name, :last_name, :address, :phone_number, :company -->
+  <div class="pb-input-wrapper">
+    <label for="phone_number" class="visually-hidden">Phone Number</label>
+    <input class="pb-input" name="registration[phone_number]" type="phone" placeholder="+1 (512) 155-555">
+  </div>
 
   <input type="text" name="_gotcha" style="display:none">
 
-  <div class="center-x">
-    <input type="submit" value="Submit" class="pb-input pb-button half-width large">
+  <div class="center pb-mt-4">
+    <input type="submit" value="Submit" class="pb-input pb-button pb-width-50 pb-mx-auto">
   </div>
 </form>
