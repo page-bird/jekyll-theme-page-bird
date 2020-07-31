@@ -144,14 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
         method: 'POST',
         body: new FormData(pbSubmitWithJsForm)
       }).then(function(response) {
-        let iconWrapper = pbSubmitWithJsForm.closest(".pb-form-submit-js").querySelector(".pb-icon-wrapper")
-        let leadText = pbSubmitWithJsForm.closest(".pb-form-submit-js").querySelector(".pb-lead")
+        let iconWrapper = pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").querySelector(".pb-icon-wrapper")
+        let leadText = pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").querySelector(".pb-lead")
         const pbCheckmark = `<svg class="pb-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>`
 
         if (iconWrapper) {
           iconWrapper.outerHTML = pbCheckmark
         } else {
-          pbSubmitWithJsForm.closest(".pb-form-submit-js").insertAdjacentHTML('afterbegin', pbCheckmark)
+          pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").insertAdjacentHTML('afterbegin', pbCheckmark)
         }
 
         if (leadText) {
