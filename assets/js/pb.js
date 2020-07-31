@@ -134,30 +134,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Submit New Newsletter Subscriber Form
 document.addEventListener('DOMContentLoaded', function() {
-  let pbNewsletterSubscriptionForm = document.querySelector("#newsletter-subscription-form")
+  let pbSubmitWithJsForm = document.querySelector("[data-behavior~=pb-form-submit-with-js]")
 
-  if (pbNewsletterSubscriptionForm) {
-    pbNewsletterSubscriptionForm.addEventListener("submit", function(e) {
+  if (pbSubmitWithJsForm) {
+    pbSubmitWithJsForm.addEventListener("submit", function(e) {
       e.preventDefault()
 
-      fetch(pbNewsletterSubscriptionForm.getAttribute("action"), {
+      fetch(pbSubmitWithJsForm.getAttribute("action"), {
         method: 'POST',
-        body: new FormData(pbNewsletterSubscriptionForm)
+        body: new FormData(pbSubmitWithJsForm)
       }).then(function(response) {
-        let iconWrapper = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-icon-wrapper")
-        let leadText = pbNewsletterSubscriptionForm.closest(".pb-signup-for-newsletter").querySelector(".pb-lead")
+        let iconWrapper = pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").querySelector(".pb-icon-wrapper")
+        let leadText = pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").querySelector(".pb-lead")
+        const pbCheckmark = `<svg class="pb-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>`
 
-        iconWrapper.outerHTML = `
-          <svg class="pb-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
-        `
+        if (iconWrapper) {
+          iconWrapper.outerHTML = pbCheckmark
+        } else {
+          pbSubmitWithJsForm.closest(".pb-form-submit-js-wrapper").insertAdjacentHTML('afterbegin', pbCheckmark)
+        }
 
-        leadText.textContent = `
-          Thank you for subscribing!
-        `
+        if (leadText) {
+          let successText = pbSubmitWithJsForm.getAttribute("data-pb-form-success-text") || "Thank you!"
+          leadText.textContent = successText
+        }
 
-        pbNewsletterSubscriptionForm.remove();
+        pbSubmitWithJsForm.remove();
       }).catch(function(ex) {
-        showErrorOnInput(pbNewsletterSubscriptionForm.querySelector("input[type=email]"))
+        console.error(ex)
+        showErrorOnInput(pbSubmitWithJsForm.querySelector("input:not([type=submit])"))
       })
     })
   }

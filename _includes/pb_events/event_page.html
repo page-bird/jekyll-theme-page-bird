@@ -1,0 +1,46 @@
+  <div class="pb-event-banner {% unless event.media_url %} no-img {% endunless %}">
+    {% if event.media_url %}
+      <div class="pb-img-wrapper">
+        <img src="{{ event.media_url }}">
+      </div>
+    {% endif %}
+
+    <div class="pb-event-banner--content">
+      <h1 class="pb-event--title">
+        {{ event.name }}
+      </h1>
+
+      <div>
+        {% include pb_events/dates.html %}
+      </div>
+
+      {% if event.location != "" %}
+        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+          {{ event.location }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+
+<div class="pb-event--content-wrapper">
+  <div class="pb-event--body">
+    <h2 class="pb-event--subtitle">About this event</h2>
+    
+    {{ event.description_as_html }}
+
+    {% if event.map_url %}
+      <div class="pb-img-wrapper pb-mt-4">
+        <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+          <img src="{{ event.map_url }}" alt="Event Map">
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  {% include pb_events/pb_registration_for_event.html %}
+</div>
+
+
+
+
