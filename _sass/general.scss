@@ -1,6 +1,11 @@
 $pb-green: #7ac142;
 $white: #fff;
 
+:root {
+  --pb-bg-light: #afc1d0;
+  --pb-primary-color: rgb(35, 146, 236);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

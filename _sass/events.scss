@@ -18,6 +18,10 @@
       top: 10px;
       right: 10px;
     }
+
+    &.no-img {
+      background: var(--pb-bg-light);
+    }
   }
 
   .pb-event-card--title {
@@ -119,7 +123,7 @@
   justify-content: center;
   padding: 60px;
   max-height: 340px;
-  background: #afc1d0;
+  background: var(--pb-bg-light);
 
   .pb-event-banner--content {
     text-align: center;

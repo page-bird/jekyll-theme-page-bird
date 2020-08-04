@@ -31,7 +31,7 @@
 
   &:focus, &:active {
     outline: none;
-    border-color: rgb(35, 146, 236);
+    border-color: var(--pb-primary-color);
   }
 
   &[disabled='disabled'], &[readonly='readonly'] {
@@ -40,8 +40,8 @@
 }
 
 .pb-button {
-  background-color: rgb(35, 146, 236);
-  border-color: rgb(35, 146, 236);
+  background-color: var(--pb-primary-color);
+  border-color: var(--pb-primary-color);
   color: white;
   cursor: pointer;
 }
