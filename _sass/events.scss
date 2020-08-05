@@ -4,12 +4,14 @@
 }
 
 .pb-event-card {
-  position: relative;
   display: flex;
   align-items: flex-start;
-  padding: 40px 0;
+  padding: 40px 20px;
 
   .pb-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 2rem;
     max-width: 360px;
 
@@ -19,8 +21,24 @@
       right: 10px;
     }
 
+    .pb-event-banner--content {
+      display: none;
+    }
+
     &.no-img {
       background: var(--pb-bg-light);
+      .pb-date-tag {
+        display: none;
+      }
+
+      .pb-event-banner--content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.1);
+      }
     }
   }
 
