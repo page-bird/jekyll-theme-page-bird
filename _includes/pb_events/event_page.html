@@ -11,7 +11,7 @@
           {{ event.name }}
         </h1>
   
-        <div>
+        <div class="pb-event--date pb-event--date-lg">
           {% include pb_events/dates.html %}
         </div>
   
@@ -23,21 +23,23 @@
       </div>
     </div>
     
-    <div class="pb-event--content-wrapper">
-      <div class="pb-event--body">
-        <h2 class="pb-event--subtitle">About this event</h2>
-        
-        {{ event.description_as_html }}
-    
-        {% if event.map_url %}
-          <div class="pb-img-wrapper pb-mt-4">
-            <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
-              <img src="{{ event.map_url }}" alt="Event Map">
-            </a>
-          </div>
-        {% endif %}
-      </div>
-    
+    <div class="pb-event--content-wrapper {% if event.preview_description.size > 1 %} pb-event--content-wrapper-grid {% endif %}">
+      {% if event.preview_description.size > 1 %}
+        <div class="pb-event--body">
+          <h2 class="pb-event--subtitle">About this event</h2>
+          
+          {{ event.description_as_html }}
+      
+          {% if event.map_url %}
+            <div class="pb-img-wrapper pb-mt-4">
+              <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
+                <img src="{{ event.map_url }}" alt="Event Map">
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
       {% include pb_events/pb_registration_for_event.html %}
     </div>
   </div>
