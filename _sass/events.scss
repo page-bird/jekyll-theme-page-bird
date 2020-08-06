@@ -109,7 +109,7 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
-  margin: 16px;
+  min-width: 540px;
   padding: 30px 60px;
   background: #f6f7f8;
   text-align: left;
@@ -156,6 +156,7 @@
   .pb-event-banner--content {
     text-align: center;
     width: 100%;
+    min-width: 300px;
     max-width: 450px;
     background: #fff;
     padding: 30px;
