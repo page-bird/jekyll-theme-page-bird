@@ -1,0 +1,10 @@
+:root {
+  --white: #fff;
+  --pb-bg-light: #afc1d0;
+  --pb-light-grey:  rgba(41, 43, 44, 0.7);
+  --pb-primary-color: rgb(35, 146, 236);
+  --pb-green: #7ac142;
+}
+
+.pb-text--light-grey { color: var(--pb-light-grey) }
+.pb-text--bold { font-weight: bold; }
