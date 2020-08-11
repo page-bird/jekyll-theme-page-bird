@@ -7,9 +7,12 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  padding: 40px 0;
+  padding: 40px 20px;
 
   .pb-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 2rem;
     max-width: 360px;
 
@@ -21,6 +24,18 @@
 
     &.no-img {
       background: var(--pb-bg-light);
+  
+      .pb-event-card-banner--content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.1);
+        width: 100%;
+        max-width: 75%;
+        padding: 16px;
+      }
     }
   }
 
@@ -87,8 +102,9 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
-  background: #f6f7f8;
+  min-width: 540px;
   padding: 30px 60px;
+  background: #f6f7f8;
   text-align: left;
 
   .pb-event--title {
@@ -98,16 +114,21 @@
     line-height: 1.12;
   }
 
+  .pb-event--date {
+    color: var(--pb-light-grey);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    &.pb-event--date-lg {
+      font-size: 1rem;
+    }
+  }
+
   a {
     display: block;
     margin-top: 2rem;
     color: inherit;
     text-decoration: underline;
     font-weight: 500;
-  }
-
-  @media(min-width: 992px) {
-    min-width: 500px;
   }
   
   @media(max-width: 991px) {
@@ -128,6 +149,7 @@
   .pb-event-banner--content {
     text-align: center;
     width: 100%;
+    min-width: 300px;
     max-width: 450px;
     background: #fff;
     padding: 30px;
@@ -135,16 +157,25 @@
 }
 
 .pb-event--content-wrapper {
+  display: flex;
+  justify-content: center;
   padding: 60px 30px;
   max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-column-gap: 10%;
-  grid-template-columns: 40% 50%;
+  margin: 0 auto; 
 
-  @media (max-width: 767px) {
+  &.pb-event--content-wrapper-grid {
+    display: grid;
+    grid-column-gap: 10%;
+    grid-template-columns: 40% 50%;
+  }
+  
+  @media(max-width: 991px) {
     padding: 30px;
     display: block;
+    &.pb-event--content-wrapper-grid {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 

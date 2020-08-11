@@ -4,16 +4,20 @@
   <div class="pb-img-wrapper img-animated {% unless event.media_url %} no-img {% endunless %}">
     {% if event.media_url %}
       <img src="{{ event.media_url }}">
-    {% endif %}
-
-    <div class="pb-date-tag">
-      <div class="pb-date-tag--month">
-        {{ event.start_at | date: "%b" }}
+      <div class="pb-date-tag">
+        <div class="pb-date-tag--month">
+          {{ event.start_at | date: "%b" }}
+        </div>
+        <div class="pb-date-tag--day">
+          {{ event.start_at | date: "%e" }}
+        </div>
       </div>
-      <div class="pb-date-tag--day">
-        {{ event.start_at | date: "%e" }}
+    {% else %}
+      <div class="pb-event-card-banner--content">
+        <div class="pb-event--title pb-text--bold">{{ event.name }}</div>
+        <div class="pb-event--date pb-text--light-grey">{{ event.start_at | date: "%b %e" }}</div>
       </div>
-    </div>
+    {% endif %}  
   </div>
 
   <div>
