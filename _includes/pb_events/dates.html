@@ -5,16 +5,19 @@
 {% endif %}
 
 {% if event.end_at and start_date == end_date %}
-  {{ event.start_at | date: "%a, %b %e, %Y"  }} <br>
+  {{ event.start_at | date: "%a, %b %e, %Y"  }} 
+  {% unless include.oneline %}
+    <br>
+  {% endunless %}
   {{ event.start_at | date: "%l:%M %p"  }}
 
   {% if event.end_at %}
-    — {{ event.end_at | date: "%l:%M %p" }}
+    – {{ event.end_at | date: "%l:%M %p" }}
   {% endif %}
 {% else %}
   {{ event.start_at | date: "%a, %b %e, %Y, %l:%M %p"  }}
 
   {% if event.end_at %}
-    — {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
+    – {{ event.end_at | date: "%a, %b %e, %Y, %l:%M %p" }}
   {% endif %}
 {% endif %}

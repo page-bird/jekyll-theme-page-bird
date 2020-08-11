@@ -1,5 +1,5 @@
 <div class="pb-event-card">
-  <a href="/events/{{ event.slug }}" class="absolute-link"></a>
+  <a href="/{{ site.page_bird.events.index }}/{{ event.slug }}" class="absolute-link"></a>
 
   <div class="pb-img-wrapper img-animated {% unless event.media_url %} no-img {% endunless %}">
     {% if event.media_url %}
@@ -14,8 +14,8 @@
       </div>
     {% else %}
       <div class="pb-event-card-banner--content">
-        <div class="pb-event--title pb-text--bold">{{ event.name }}</div>
-        <div class="pb-event--date pb-text--light-grey">{{ event.start_at | date: "%b %e" }}</div>
+        <h3 class="pb-event-card-banner--title">{{ event.name }}</h3>
+        <div class="pb-event-card-banner--date">{{ event.start_at | date: "%b %e" }}</div>
       </div>
     {% endif %}  
   </div>

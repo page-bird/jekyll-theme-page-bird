@@ -1,6 +1,6 @@
 GIT
   remote: https://pagebirdapi:fT7zfPWbZsrNJ9YX6t9BNe9e@github.com/page-bird/jekyll-bird-plugins.git
-  revision: 2c080cfb7904b34100e30908fce781bfe74aada2
+  revision: 8af627bc6157b9f94e456711f7022a0e51887227
   specs:
     jekyll-bird-plugins (0.1.0)
       jekyll
@@ -19,7 +19,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     coderay (1.1.3)
     colorator (1.1.0)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)

@@ -1,5 +1,5 @@
 .pb-events-index {
-  max-width: 820px;
+  max-width: 1000px;
   margin: 0 auto 2rem;
 }
 
@@ -7,7 +7,7 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  padding: 40px 20px;
+  margin: 60px 20px;
 
   .pb-img-wrapper {
     display: flex;
@@ -16,27 +16,40 @@
     margin-right: 2rem;
     max-width: 360px;
 
+    &.no-img {
+      background: var(--pb-bg-light);
+    }
+
     .pb-date-tag {
       position: absolute;
       top: 10px;
       right: 10px;
     }
+  }
 
-    &.no-img {
-      background: var(--pb-bg-light);
-  
-      .pb-event-card-banner--content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.1);
-        width: 100%;
-        max-width: 75%;
-        padding: 16px;
-      }
-    }
+  .pb-event-card-banner--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.1);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 75%;
+    padding: 16px;
+  }
+
+  .pb-event-card-banner--title {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin: 0 0 4px;
+  }
+
+  .pb-event-card-banner--date {
+    font-size: 0.9rem;
+    color: var(--pb-light-grey)
   }
 
   .pb-event-card--title {
@@ -45,7 +58,7 @@
   }
 
   .pb-event-card--meta {
-    margin-top: 1rem;
+    margin-top: 0.67rem;
     color: rgba(0, 0, 0, 0.843137);
     font-size: 1rem;
     line-height: 1.67;
@@ -53,7 +66,8 @@
 
   .pb-event-card--content {
     color: rgba(0, 0, 0, 0.541176);
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 0.67rem;
   }
 
   @media (max-width: 991px) {
@@ -91,7 +105,6 @@
 
   @media (max-width: 768px) {
     display: block;
-    margin-bottom: 2rem;
     height: auto;
   }
 }
@@ -105,6 +118,7 @@
   min-width: 540px;
   padding: 30px 60px;
   background: #f6f7f8;
+  border-radius: 4px;
   text-align: left;
 
   .pb-event--title {
@@ -117,7 +131,7 @@
   .pb-event--date {
     color: var(--pb-light-grey);
     font-size: 0.8rem;
-    margin-top: 4px;
+    
     &.pb-event--date-lg {
       font-size: 1rem;
     }
@@ -132,6 +146,9 @@
   }
   
   @media(max-width: 991px) {
+    min-width: 0;
+    padding: 30px;
+
     .pb-event--title {
       font-size: 1.5rem;
     }
