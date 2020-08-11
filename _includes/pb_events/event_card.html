@@ -12,12 +12,12 @@
           {{ event.start_at | date: "%e" }}
         </div>
       </div>
+    {% else %}
+      <div class="pb-event-card-banner--content">
+        <div class="pb-event--title pb-text--bold">{{ event.name }}</div>
+        <div class="pb-event--date pb-text--light-grey">{{ event.start_at | date: "%b %e" }}</div>
+      </div>
     {% endif %}  
-      
-    <div class="pb-event-card-banner--content">
-      <div class="pb-event--title pb-text--bold">{{ event.name }}</div>
-      <div class="pb-event--date pb-text--light-grey">{{ event.start_at | date: "%b %e" }}</div>
-    </div>
   </div>
 
   <div>
