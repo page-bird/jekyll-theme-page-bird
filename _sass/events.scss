@@ -22,16 +22,9 @@
       right: 10px;
     }
 
-    .pb-event-card-banner--content {
-      display: none;
-    }
-
     &.no-img {
       background: var(--pb-bg-light);
-      .pb-date-tag {
-        display: none;
-      }
-
+  
       .pb-event-card-banner--content {
         display: flex;
         flex-direction: column;
@@ -174,19 +167,15 @@
     display: grid;
     grid-column-gap: 10%;
     grid-template-columns: 40% 50%;
-    
   }
   
   @media(max-width: 991px) {
+    padding: 30px;
+    display: block;
     &.pb-event--content-wrapper-grid {
       display: flex;
       flex-direction: column;
     }
-  }
-
-  @media (max-width: 991px) {
-    padding: 30px;
-    display: block;
   }
 }
 

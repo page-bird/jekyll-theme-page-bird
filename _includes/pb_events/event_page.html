@@ -15,7 +15,7 @@
           {% include pb_events/dates.html %}
         </div>
   
-        {% if event.location != "" %}
+        {% if event.location.size > 0 %}
           <a href="https://www.google.com/maps/search/{{ event.location }}" target="_blank">
             {{ event.location }}
           </a>
