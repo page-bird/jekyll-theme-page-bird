@@ -180,17 +180,17 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault()
         return false
       }
-
+      let submitButton = form.querySelector("[type=submit]")
+      
       pbLoadingButton = `
-        <div class="${this.classList.value} pb-button-disabled">
+        <div class="${submitButton.classList.value} pb-button-disabled">
           <div class="pb-loader-wrapper">
             <div class='pb-loader'></div>Processing...
           </div>
         </div>
       `
-      let submitButton = form.querySelector("[type=submit]")
-        submitButton.classList.add('hidden')
-        submitButton.insertAdjacentHTML('afterend', pbLoadingButton )
+      submitButton.classList.add('hidden')
+      submitButton.insertAdjacentHTML('afterend', pbLoadingButton )
     })
   });
 })
