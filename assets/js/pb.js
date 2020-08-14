@@ -175,19 +175,39 @@ document.addEventListener('DOMContentLoaded', function() {
   })
 
   pbForms.forEach(function(form) {
-    form.querySelector("[type=submit]").addEventListener('click', function(e) {
+    form.addEventListener('submit', function(e) {
+      if (pbFormInvalid(form)) {
+        e.preventDefault()
+        return false
+      }
+      let submitButton = form.querySelector("[type=submit]")
+      
       pbLoadingButton = `
-        <div class="${this.classList.value} pb-button-disabled">
+        <div class="${submitButton.classList.value} pb-button-disabled">
           <div class="pb-loader-wrapper">
             <div class='pb-loader'></div>Processing...
           </div>
         </div>
       `
-      this.classList.add('hidden')
-      this.insertAdjacentHTML('afterend', pbLoadingButton )
+      submitButton.classList.add('hidden')
+      submitButton.insertAdjacentHTML('afterend', pbLoadingButton )
     })
   });
 })
+
+function pbFormInvalid(form) {
+  const validatedCheckboxGroups = form.querySelectorAll("[data-behavior~=checkbox-validation]")
+  let array = [];
+  if (validatedCheckboxGroups.length > 0) {
+    validatedCheckboxGroups.forEach(function (checkboxGroup) {
+      array.push(checkboxGroup.querySelectorAll("input[type=checkbox]:checked").length < 1)
+    })
+    if (array.includes(true)) {
+      alert("Please check at least one checkbox")
+      return true
+    }
+  }
+}
 
 // Shared Methods
 function showErrorOnInput(input) {
