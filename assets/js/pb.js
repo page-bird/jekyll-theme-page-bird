@@ -176,6 +176,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   pbForms.forEach(function(form) {
     form.addEventListener('submit', function(e) {
+      if (pbFormInvalid(form)) {
+        e.preventDefault()
+        return false
+      }
+
       pbLoadingButton = `
         <div class="${this.classList.value} pb-button-disabled">
           <div class="pb-loader-wrapper">
@@ -190,16 +195,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
-// // Check at least one event is selected
-// $(document).on('submit', 'form[data-behavior~=checkbox-validation]', function (e) {
-//   checked = $("input[type=checkbox]:checked").length;
-
-//   if (!checked) {
-//     e.preventDefault()
-//     alert("Please select at least one event you'd like to attend/participate in.");
-//     return false;
-//   }
-// }) 
+pbFormInvalid(form) {
+  const validatedCheckboxGroups = form.querySelectorAll("[data-behavior~=checkbox-validation]")
+  if (validatedCheckboxGroups.length > 0) {
+    validatedCheckboxGroups.forEach(function (checkboxGroup) {
+      checkboxGroup.find("input[type=checkbox]:checked").length < 1
+      alert("Please check at least one checkbox");
+    })
+  }
+}
 
 // Shared Methods
 function showErrorOnInput(input) {
