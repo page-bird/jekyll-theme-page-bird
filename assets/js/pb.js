@@ -183,8 +183,11 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
       `
-      this.classList.add('hidden')
-      this.insertAdjacentHTML('afterend', pbLoadingButton )
+      
+      if (form.checkValidity()) {
+        this.classList.add('hidden')
+        this.insertAdjacentHTML('afterend', pbLoadingButton )
+      }
     })
   });
 })
