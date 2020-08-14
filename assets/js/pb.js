@@ -195,13 +195,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
-pbFormInvalid(form) {
+function pbFormInvalid(form) {
   const validatedCheckboxGroups = form.querySelectorAll("[data-behavior~=checkbox-validation]")
+  let array = [];
   if (validatedCheckboxGroups.length > 0) {
     validatedCheckboxGroups.forEach(function (checkboxGroup) {
-      checkboxGroup.find("input[type=checkbox]:checked").length < 1
-      alert("Please check at least one checkbox");
+      array.push(checkboxGroup.querySelectorAll("input[type=checkbox]:checked").length < 1)
     })
+    if (array.includes(true)) {
+      alert("Please check at least one checkbox")
+      return true
+    }
   }
 }
 
